@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        "https://jitpack.io"
+    }
+}
+includeBuild 'plugin'
+rootProject.name = "GweeService"
+include ':app'
+include ':service'
+include ':mod:report'
+include ':mod:reportimpl'
+include ':processor'
