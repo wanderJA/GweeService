@@ -39,12 +39,12 @@ subprojects {
   pluginManager.withPlugin("java") {
     configure<JavaPluginExtension> {
       toolchain {
-        languageVersion.set(JavaLanguageVersion.of(16))
+        languageVersion.set(JavaLanguageVersion.of(11))
       }
     }
 
     project.tasks.withType<JavaCompile>().configureEach {
-      options.release.set(8)
+      options.release.set(11)
     }
   }
 
@@ -61,16 +61,5 @@ subprojects {
       }
     }
 
-    apply(plugin = "org.jetbrains.dokka")
-    tasks.named<DokkaTask>("dokkaHtml") {
-      outputDirectory.set(rootProject.rootDir.resolve("docs/0.x"))
-      dokkaSourceSets.configureEach {
-        skipDeprecated.set(true)
-        // TODO Dokka can't parse javadoc.io yet
-        //    externalDocumentationLink {
-        //      url.set(URL("https://javadoc.io/doc/com.google.auto.service/auto-service-annotations/latest/index.html"))
-        //    }
-      }
-    }
   }
 }

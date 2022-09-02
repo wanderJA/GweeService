@@ -1,4 +1,4 @@
-package dev.zacsweers.autoservice.ksp
+package com.gwee.service.ksp
 
 import com.google.auto.service.AutoService
 import com.google.common.collect.HashMultimap

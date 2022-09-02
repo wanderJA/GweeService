@@ -17,9 +17,8 @@
 plugins {
 //  id("com.google.devtools.ksp")
   kotlin("jvm")
-//  kotlin("kapt")
-  id("com.vanniktech.maven.publish")
 }
+apply("$rootDir/upload.gradle")
 
 dependencies {
   // Can't entirely rely on this until KSP is stable
